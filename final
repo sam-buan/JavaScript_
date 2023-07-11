@@ -9,78 +9,44 @@ Assessment Requirements
 */
 
 // create a variable to hold your NFT's
-
-
 const NFTs = []
-
-
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT (nftname, eyecolors, shirttype, nftbling) {
+function mintNFT (name, eyecolors, shirttype, bling) {
    const nft_value ={
-      "nftname": nftname,
+      "name": name,
       "eyecolors": eyecolors,
       "shirttype": shirttype,
-      "nftbling": nftbling
+      "bling": bling
    }
 
    NFTs.push(nft_value);
-   console.log("\nName of NFT Minted: " + nftname);
-
-
+   console.log("Minted: " + name);
 }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
    for(let i = 0; i<NFTs.length; i++){
-      console.log("\nNFT ID: \t\t"+(i+1));
-      console.log("NFT Name: \t\t"+NFTs[i].nftname);
-      console.log("NFT Eyecolor: \t\t"+NFTs[i].eyecolors);
-      console.log("NFT Shirt Type: \t"+NFTs[i].shirttype);
-      console.log("NFT Bling: \t\t"+NFTs[i].nftbling);
+      console.log("\nID: \t\t"+(i+1));
+      console.log("\nName: \t\t"+NFTs[i].name);
+      console.log("Eyecolor: \t\t"+NFTs[i].eyecolors);
+      console.log("Shirt Type: \t"+NFTs[i].shirttype);
+      console.log("Bling: \t\t"+NFTs[i].bling);
    }
-
 }
 
 // print the total number of NFTs we have minted to the console
 function getTotalSupply() {
-   console.log("\nNFT Total: "+NFTs.length+" NFTs");
+   console.log("\n"+NFTs.length);
 
-}
-
-//to 'prompt' function to work
-const prompt = require('prompt-sync')();
-
-
-
-//a function that let the user input
-function user_input(){
-
-   const name=prompt("Your NFT name: ");
-   const eye_color=prompt("Your NFT eye color: ");
-   const shirt_type=prompt("your NFT shirt type: ");
-   const blings=prompt("Your NFT bling: ");
-
-
-   if(name,eye_color,shirt_type,blings != null){
-      mintNFT((name), (eye_color),(shirt_type),(blings));
-      listNFTs();
-      getTotalSupply();
-      }
-      
 }
 
 // call your functions below this line
 
-
-user_input();
-
-/*
 mintNFT("Bron","Black","Shirt","Bracelet");
 mintNFT("Pritz","Blue","Hoodie","Watch");
 mintNFT("Panther","Purple","Sweatshirt","Necklace");
 listNFTs();
 getTotalSupply();
-*/
